@@ -110,10 +110,25 @@ func main() {
 	// }
 
 	// slice
-	var gamingSlice []string
-	gamingSlice = append(gamingSlice, "Playstation 4")
-	gamingSlice = append(gamingSlice, "Nintendo Switch")
-	gamingSlice = append(gamingSlice, "XBox")
-	fmt.Println(gamingSlice)
+	// var gamingSlice []string
+	// gamingSlice = append(gamingSlice, "Playstation 4")
+	// gamingSlice = append(gamingSlice, "Nintendo Switch")
+	// gamingSlice = append(gamingSlice, "XBox")
+	// fmt.Println(gamingSlice)
+
+	// map
+	myMap := map[string]string{
+		"Golang": "Golang is Best language",
+		"Ruby":   "Ruby is the best framework",
+		"Python": "Hello World",
+	}
+	fmt.Println(myMap)
+	for _, value := range myMap {
+		// fmt.Println("Key : ", key, "Value :", value)
+		fmt.Println("Value:", value)
+	}
+	fmt.Println("=====")
+	delete(myMap, "Golang")
+	fmt.Println(myMap)
 
 }
