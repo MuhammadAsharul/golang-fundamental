@@ -100,13 +100,20 @@ func main() {
 	// languages[3] = "PHP"
 	// languages[4] = "Javascript"
 
-	languages := [...]string{"Golang", "Ruby", "C++", "PHP", "Javascript", "Python"}
-	fmt.Println(languages)
-	length := len(languages)
-	fmt.Println(length)
+	// languages := [...]string{"Golang", "Ruby", "C++", "PHP", "Javascript", "Python"}
+	// fmt.Println(languages)
+	// length := len(languages)
+	// fmt.Println(length)
 
-	for index, lang := range languages {
-		fmt.Println("index", index, "language", lang)
-	}
+	// for index, lang := range languages {
+	// 	fmt.Println("index", index, "language", lang)
+	// }
+
+	// slice
+	var gamingSlice []string
+	gamingSlice = append(gamingSlice, "Playstation 4")
+	gamingSlice = append(gamingSlice, "Nintendo Switch")
+	gamingSlice = append(gamingSlice, "XBox")
+	fmt.Println(gamingSlice)
 
 }
