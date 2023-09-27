@@ -117,18 +117,28 @@ func main() {
 	// fmt.Println(gamingSlice)
 
 	// map
-	myMap := map[string]string{
-		"Golang": "Golang is Best language",
-		"Ruby":   "Ruby is the best framework",
-		"Python": "Hello World",
+	// myMap := map[string]string{
+	// 	"Golang": "Golang is Best language",
+	// 	"Ruby":   "Ruby is the best framework",
+	// 	"Python": "Hello World",
+	// }
+	// fmt.Println(myMap)
+	// for _, value := range myMap {
+	// 	// fmt.Println("Key : ", key, "Value :", value)
+	// 	fmt.Println("Value:", value)
+	// }
+	// fmt.Println("=====")
+	// delete(myMap, "Golang")
+	// fmt.Println(myMap)
+
+	// slice of map
+	students := []map[string]string{
+		{"name": "Arul", "score": "A"},
+		{"name": "Aziz", "score": "B"},
+		{"name": "Abi", "score": "C"},
 	}
-	fmt.Println(myMap)
-	for _, value := range myMap {
-		// fmt.Println("Key : ", key, "Value :", value)
-		fmt.Println("Value:", value)
+	for _, value := range students {
+		fmt.Println(value["name"], " - ", value["score"])
 	}
-	fmt.Println("=====")
-	delete(myMap, "Golang")
-	fmt.Println(myMap)
 
 }
