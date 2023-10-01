@@ -1,27 +1,29 @@
 package main
 
 import (
+	"errors"
 	"fmt"
-	"golang-agung/calculation"
 )
+
+// "golang-agung/calculation"
 
 func main() {
 	// println
-	fmt.Println("Halo Saya belajar Golang")
+	// fmt.Println("Halo Saya belajar Golang")
 
 	// import func from deferent package
-	result := calculation.Add(11, 2)
-	fmt.Println(result)
+	// result := calculation.Add(11, 2)
+	// fmt.Println(result)
 
-	result1 := calculation.Multiply(11, 2)
-	fmt.Println(result1)
+	// result1 := calculation.Multiply(11, 2)
+	// fmt.Println(result1)
 
 	// declare variable
 
 	// var name string = "Golang"
 	// atau
-	name := "Gojek"
-	fmt.Println(name)
+	// name := "Gojek"
+	// fmt.Println(name)
 
 	// if else
 
@@ -143,7 +145,7 @@ func main() {
 
 	// kuis
 	// 1. hitung rata-rata
-	scores := [8]int{100, 80, 75, 92, 70, 93, 88, 67}
+	// scores := [8]int{100, 80, 75, 92, 70, 93, 88, 67}
 	// var total int
 	// for _, score := range scores {
 	// 	total = total + score
@@ -154,12 +156,80 @@ func main() {
 	// fmt.Println(average)
 
 	// 2. append to slice
-	var goodScores []int
+	// var goodScores []int
 
-	for _, score := range scores {
-		if score >= 90 {
-			goodScores = append(goodScores, score)
-		}
+	// for _, score := range scores {
+	// 	if score >= 90 {
+	// 		goodScores = append(goodScores, score)
+	// 	}
+	// }
+	// fmt.Println(goodScores)
+
+	// function
+	// sentence := printMyResult("Python")
+	// fmt.Println(sentence)
+
+	// result := add(10, 12)
+	// fmt.Println(result)
+
+	// luas, _ := calculate(10, 12)
+	// fmt.Println("Luas persegi panjang : ", luas)
+	// fmt.Println(keliling)
+
+	// quiz
+	scores := []int{10, 5, 8, 9, 7}
+	total := sum(scores)
+	fmt.Println(total)
+
+	// result, err := calculate(10, 2, "+")
+	// result, err := calculate(10, 2, "-")
+	// result, err := calculate(10, 2, "*")
+	// result, err := calculate(10, 2, "/")
+	result, err := calculate(10, 2, "=")
+	if err != nil {
+		fmt.Println("Terjadi Kesalahan")
+		fmt.Println(err.Error())
 	}
-	fmt.Println(goodScores)
+	fmt.Println(result)
+}
+
+// func printMyResult(sentence string) string {
+// 	// newSentence := sentence + " Belajar"
+// 	return sentence
+// }
+// func add(number, numberTwo int) int {
+// 	return number + numberTwo
+// }
+
+// func calculate(panjang int, lebar int) (luas int, keliling int) {
+// 	luas = panjang * lebar
+// 	keliling = 2 * (panjang + lebar)
+// 	return
+// }
+
+// quiz
+func sum(numbers []int) int {
+	total := 0
+	for _, number := range numbers {
+		total += number
+	}
+	return total
+}
+
+func calculate(number, numberTwo int, operation string) (int, error) {
+	var result int
+	var errorResult error
+	switch operation {
+	case "+":
+		result = number + numberTwo
+	case "-":
+		result = number - numberTwo
+	case "*":
+		result = number * numberTwo
+	case "/":
+		result = number / numberTwo
+	default:
+		errorResult = errors.New("Unknown Operation")
+	}
+	return result, errorResult
 }
