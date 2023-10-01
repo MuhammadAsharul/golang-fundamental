@@ -15,9 +15,16 @@ type User struct {
 }
 
 func main() {
-	user := User{1, "Zelda", "Xavier", "xavier@gmail.com", true}
-	fmt.Println(user)
-	fmt.Println(user.firstName)
+	user1 := User{1, "Zelda", "Xavier", "xavier@gmail.com", true}
+	user2 := User{2, "Zechic", "Arachio", "arachio@gmail.com", true}
+
+	display1 := displayUser(user1)
+	display2 := displayUser(user2)
+
+	fmt.Println(display1)
+	fmt.Println(display2)
+	// fmt.Println(user)
+	// fmt.Println(user.firstName)
 
 	// println
 	// fmt.Println("Halo Saya belajar Golang")
@@ -204,44 +211,50 @@ func main() {
 	// 	fmt.Println(result)
 	// }
 
-	// func printMyResult(sentence string) string {
-	// 	// newSentence := sentence + " Belajar"
-	// 	return sentence
-	// }
-	// func add(number, numberTwo int) int {
-	// 	return number + numberTwo
-	// }
+}
 
-	// func calculate(panjang int, lebar int) (luas int, keliling int) {
-	// 	luas = panjang * lebar
-	// 	keliling = 2 * (panjang + lebar)
-	// 	return
-	// }
+// func printMyResult(sentence string) string {
+// 	// newSentence := sentence + " Belajar"
+// 	return sentence
+// }
+// func add(number, numberTwo int) int {
+// 	return number + numberTwo
+// }
 
-	// quiz
-	// func sum(numbers []int) int {
-	// 	total := 0
-	// 	for _, number := range numbers {
-	// 		total += number
-	// 	}
-	// 	return total
-	// }
+// func calculate(panjang int, lebar int) (luas int, keliling int) {
+// 	luas = panjang * lebar
+// 	keliling = 2 * (panjang + lebar)
+// 	return
+// }
 
-	// func calculate(number, numberTwo int, operation string) (int, error) {
-	// 	var result int
-	// 	var errorResult error
-	// 	switch operation {
-	// 	case "+":
-	// 		result = number + numberTwo
-	// 	case "-":
-	// 		result = number - numberTwo
-	// 	case "*":
-	// 		result = number * numberTwo
-	// 	case "/":
-	// 		result = number / numberTwo
-	// 	default:
-	// 		errorResult = errors.New("Unknown Operation")
-	// 	}
-	// 	return result, errorResult
-	// }
+// quiz
+// func sum(numbers []int) int {
+// 	total := 0
+// 	for _, number := range numbers {
+// 		total += number
+// 	}
+// 	return total
+// }
+
+// func calculate(number, numberTwo int, operation string) (int, error) {
+// 	var result int
+// 	var errorResult error
+// 	switch operation {
+// 	case "+":
+// 		result = number + numberTwo
+// 	case "-":
+// 		result = number - numberTwo
+// 	case "*":
+// 		result = number * numberTwo
+// 	case "/":
+// 		result = number / numberTwo
+// 	default:
+// 		errorResult = errors.New("Unknown Operation")
+// 	}
+// 	return result, errorResult
+// }
+
+// struct sbg parameter
+func displayUser(user User) string {
+	return fmt.Sprintf("Name : %s %s dengan email : %s", user.firstName, user.lastName, user.Email)
 }
