@@ -1,13 +1,24 @@
 package main
 
 import (
-	"errors"
 	"fmt"
 )
 
 // "golang-agung/calculation"
 
+type User struct {
+	ID        int
+	firstName string
+	lastName  string
+	Email     string
+	IsActive  bool
+}
+
 func main() {
+	user := User{1, "Zelda", "Xavier", "xavier@gmail.com", true}
+	fmt.Println(user)
+	fmt.Println(user.firstName)
+
 	// println
 	// fmt.Println("Halo Saya belajar Golang")
 
@@ -177,59 +188,60 @@ func main() {
 	// fmt.Println(keliling)
 
 	// quiz
-	scores := []int{10, 5, 8, 9, 7}
-	total := sum(scores)
-	fmt.Println(total)
+	// scores := []int{10, 5, 8, 9, 7}
+	// total := sum(scores)
+	// fmt.Println(total)
 
 	// result, err := calculate(10, 2, "+")
 	// result, err := calculate(10, 2, "-")
 	// result, err := calculate(10, 2, "*")
 	// result, err := calculate(10, 2, "/")
-	result, err := calculate(10, 2, "=")
-	if err != nil {
-		fmt.Println("Terjadi Kesalahan")
-		fmt.Println(err.Error())
-	}
-	fmt.Println(result)
-}
+	// 	result, err := calculate(10, 2, "=")
+	// 	if err != nil {
+	// 		fmt.Println("Terjadi Kesalahan")
+	// 		fmt.Println(err.Error())
+	// 	}
+	// 	fmt.Println(result)
+	// }
 
-// func printMyResult(sentence string) string {
-// 	// newSentence := sentence + " Belajar"
-// 	return sentence
-// }
-// func add(number, numberTwo int) int {
-// 	return number + numberTwo
-// }
+	// func printMyResult(sentence string) string {
+	// 	// newSentence := sentence + " Belajar"
+	// 	return sentence
+	// }
+	// func add(number, numberTwo int) int {
+	// 	return number + numberTwo
+	// }
 
-// func calculate(panjang int, lebar int) (luas int, keliling int) {
-// 	luas = panjang * lebar
-// 	keliling = 2 * (panjang + lebar)
-// 	return
-// }
+	// func calculate(panjang int, lebar int) (luas int, keliling int) {
+	// 	luas = panjang * lebar
+	// 	keliling = 2 * (panjang + lebar)
+	// 	return
+	// }
 
-// quiz
-func sum(numbers []int) int {
-	total := 0
-	for _, number := range numbers {
-		total += number
-	}
-	return total
-}
+	// quiz
+	// func sum(numbers []int) int {
+	// 	total := 0
+	// 	for _, number := range numbers {
+	// 		total += number
+	// 	}
+	// 	return total
+	// }
 
-func calculate(number, numberTwo int, operation string) (int, error) {
-	var result int
-	var errorResult error
-	switch operation {
-	case "+":
-		result = number + numberTwo
-	case "-":
-		result = number - numberTwo
-	case "*":
-		result = number * numberTwo
-	case "/":
-		result = number / numberTwo
-	default:
-		errorResult = errors.New("Unknown Operation")
-	}
-	return result, errorResult
+	// func calculate(number, numberTwo int, operation string) (int, error) {
+	// 	var result int
+	// 	var errorResult error
+	// 	switch operation {
+	// 	case "+":
+	// 		result = number + numberTwo
+	// 	case "-":
+	// 		result = number - numberTwo
+	// 	case "*":
+	// 		result = number * numberTwo
+	// 	case "/":
+	// 		result = number / numberTwo
+	// 	default:
+	// 		errorResult = errors.New("Unknown Operation")
+	// 	}
+	// 	return result, errorResult
+	// }
 }
