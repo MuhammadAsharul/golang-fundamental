@@ -2,29 +2,28 @@ package main
 
 import (
 	"fmt"
-	"golang-agung/management"
 )
 
 // "golang-agung/calculation"
 
 func main() {
-	user1 := management.User{ID: 1, FirstName: "Zelda", LastName: "Xavier", Email: "xavier@gmail.com", IsActive: true}
-	user2 := management.User{ID: 2, FirstName: "Zechic", LastName: "Arachio", Email: "arachio@gmail.com", IsActive: true}
+	// user1 := management.User{ID: 1, FirstName: "Zelda", LastName: "Xavier", Email: "xavier@gmail.com", IsActive: true}
+	// user2 := management.User{ID: 2, FirstName: "Zechic", LastName: "Arachio", Email: "arachio@gmail.com", IsActive: true}
 
-	result := user1.Display()
-	fmt.Println(result)
-	fmt.Println(user2.Display())
+	// result := user1.Display()
+	// fmt.Println(result)
+	// fmt.Println(user2.Display())
 
 	// display1 := displayUser(user1)
 	// display2 := displayUser(user2)
 
 	// fmt.Println(display1)
 	// fmt.Println(display2)
-	users := []management.User{user1, user2}
+	// users := []management.User{user1, user2}
 
-	group := management.Group{Name: "Gamer", Admin: user1, Users: users, IsAvailable: true}
+	// group := management.Group{Name: "Gamer", Admin: user1, Users: users, IsAvailable: true}
 	// displayGroup(group)
-	group.DisplayGroup()
+	// group.DisplayGroup()
 
 	// fmt.Println(user)
 	// fmt.Println(user.firstName)
@@ -213,6 +212,18 @@ func main() {
 	// 	}
 	// 	fmt.Println(result)
 	// }
+
+	// pointer
+	numberA := 5
+	numberB := &numberA
+
+	fmt.Println(numberA)
+	fmt.Println(numberB)
+	fmt.Println(*numberB)
+
+	*numberB = 10
+	fmt.Println(*numberB)
+	fmt.Println(numberA)
 
 }
 
