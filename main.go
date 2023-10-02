@@ -14,6 +14,15 @@ type User struct {
 	IsActive  bool
 }
 
+// methdod
+func (user User) Display() string {
+	return fmt.Sprintf("Name : %s %s, dengan email : %s", user.FirstName, user.LastName, user.Email)
+}
+
+func displayUser(user User) string {
+	return fmt.Sprintf("Name : %s %s, dengan email : %s", user.FirstName, user.LastName, user.Email)
+}
+
 type Group struct {
 	Name        string
 	Admin       User
@@ -25,15 +34,19 @@ func main() {
 	user1 := User{1, "Zelda", "Xavier", "xavier@gmail.com", true}
 	user2 := User{2, "Zechic", "Arachio", "arachio@gmail.com", true}
 
+	result := user1.Display()
+	fmt.Println(result)
+	fmt.Println(user2.Display())
+
 	// display1 := displayUser(user1)
 	// display2 := displayUser(user2)
 
 	// fmt.Println(display1)
 	// fmt.Println(display2)
-	users := []User{user1, user2}
+	// users := []User{user1, user2}
 
-	group := Group{"Gamer", user1, users, true}
-	displayGroup(group)
+	// group := Group{"Gamer", user1, users, true}
+	// displayGroup(group)
 
 	// fmt.Println(user)
 	// fmt.Println(user.firstName)
@@ -266,16 +279,16 @@ func main() {
 // 	return result, errorResult
 // }
 
-// struct sbg parameter
+// struct sbg parameter (function)
 // func displayUser(user User) string {
 // 	return fmt.Sprintf("Name : %s %s dengan email : %s", user.firstName, user.lastName, user.Email)
 // }
 
 // embedded struct
-func displayGroup(group Group) {
-	fmt.Printf("Name : %s", group.Name)
-	fmt.Printf("\nMember Count : %d \n", len(group.Users))
-	for _, user := range group.Users {
-		fmt.Println(user.FirstName)
-	}
-}
+// func displayGroup(group Group) {
+// 	fmt.Printf("Name : %s", group.Name)
+// 	fmt.Printf("\nMember Count : %d \n", len(group.Users))
+// 	for _, user := range group.Users {
+// 		fmt.Println(user.FirstName)
+// 	}
+// }
