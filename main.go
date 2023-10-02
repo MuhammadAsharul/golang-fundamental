@@ -2,37 +2,14 @@ package main
 
 import (
 	"fmt"
+	"golang-agung/management"
 )
 
 // "golang-agung/calculation"
 
-type User struct {
-	ID        int
-	FirstName string
-	LastName  string
-	Email     string
-	IsActive  bool
-}
-
-// methdod
-func (user User) Display() string {
-	return fmt.Sprintf("Name : %s %s, dengan email : %s", user.FirstName, user.LastName, user.Email)
-}
-
-func displayUser(user User) string {
-	return fmt.Sprintf("Name : %s %s, dengan email : %s", user.FirstName, user.LastName, user.Email)
-}
-
-type Group struct {
-	Name        string
-	Admin       User
-	Users       []User
-	isAvailable bool
-}
-
 func main() {
-	user1 := User{1, "Zelda", "Xavier", "xavier@gmail.com", true}
-	user2 := User{2, "Zechic", "Arachio", "arachio@gmail.com", true}
+	user1 := management.User{ID: 1, FirstName: "Zelda", LastName: "Xavier", Email: "xavier@gmail.com", IsActive: true}
+	user2 := management.User{ID: 2, FirstName: "Zechic", LastName: "Arachio", Email: "arachio@gmail.com", IsActive: true}
 
 	result := user1.Display()
 	fmt.Println(result)
@@ -43,10 +20,11 @@ func main() {
 
 	// fmt.Println(display1)
 	// fmt.Println(display2)
-	// users := []User{user1, user2}
+	users := []management.User{user1, user2}
 
-	// group := Group{"Gamer", user1, users, true}
+	group := management.Group{Name: "Gamer", Admin: user1, Users: users, IsAvailable: true}
 	// displayGroup(group)
+	group.DisplayGroup()
 
 	// fmt.Println(user)
 	// fmt.Println(user.firstName)
